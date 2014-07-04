@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CHECK=$(gulp check-js | egrep '(Problem|Invalid|Missing)')
+
+if [ "$CHECK" != "" ]; then
+  echo "Better stick to the rules! Commit rejected!"
+  exit 1
+fi
+
+#php bin/csscomb.php -s dev/resources/common/csscomb.json -i ./templates/emotion_parador/frontend/_resources/less -o ./templates/emotion_parador/frontend/_resources/less

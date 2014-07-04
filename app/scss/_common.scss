@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffff00;
+
+  @include breakpoint(small) {
+    color: #a36743;
+  }
+}
+
+@include placeholder('clear') {
+  clear: both;
+  border: 1px solid;
+}
+
+// -----------------------------------------------------------------------------
+// Extending a placeholder
+// -----------------------------------------------------------------------------
+
+// At root level
+.a {
+  @include _(clear); // Same as @extend %clear
+}
+
+.b {
+  @include _(clear);
+}
+
+// In a nested media query
+.c {
+  @include breakpoint(medium) {
+    @include _(clear);
+  }
+}
+
+// In an outer media query
+@include breakpoint(medium) {
+  .d {
+    @include _(clear);
+  }
+}
+
+// Both in a nested media query and at root level
+.e {
+  @include _(clear);
+
+  @include breakpoint(large) {
+    @include _(clear);
+  }
+}

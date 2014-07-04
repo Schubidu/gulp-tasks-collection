@@ -1,0 +1,8 @@
+$breakpoints: (
+  very-small: "screen and (min-width: 320px)",
+  small: "screen and (min-width: 600px)",
+  medium: "screen and (min-width: 800px)",
+  large: "screen and (min-width: 1024px)",
+  very-large: "screen and (min-width: 1280px)"
+);
+
